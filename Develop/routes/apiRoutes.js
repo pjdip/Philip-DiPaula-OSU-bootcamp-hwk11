@@ -1,13 +1,13 @@
 // Dependencies
 const fs = require("fs");
 
-// Data Load
-let rawData = fs.readFileSync("../db/db.json");
-let notes = JSON.parse(rawData);
-/* var notes = require("../db/db.json"); */
-
 // Routing
 module.exports = function(app) {
+
+    // Data Load
+    let rawData = fs.readFileSync("../db/db.json");
+    let notes = JSON.parse(rawData);
+    /* var notes = require("../db/db.json"); */
 
     // API GET requests
     // Reads db.json and returns saved notes
@@ -20,7 +20,7 @@ module.exports = function(app) {
     app.post("/api/notes", (req, res) => {
 
         // parsing middleware allows us to use req.body
-        var newNote = req.body;
+        let newNote = req.body;
 
         // setting a route for deleting notes later
         newNote.routeName = newNote.noteID;
@@ -28,6 +28,11 @@ module.exports = function(app) {
         console.log(newNote);
         notes.push(newNote);
         res.json(newNote);
+
+        fs.writeFile("../db/db.json", notes, (err) => {
+            err ? console.error(err) : console.log("New Note Added!");
+        });
+
     });
 
     // API DELETE requests
@@ -45,8 +50,10 @@ module.exports = function(app) {
         };
 
         fs.writeFile("../db/db.json", notes, (err) => {
-            err ? console.error(err) : console.log('Note Deleted!');
+            err ? console.error(err) : console.log("Note Deleted!");
         });
+
+        res.json(notes);
 
     });
 };
