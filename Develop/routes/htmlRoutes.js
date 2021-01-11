@@ -1,5 +1,5 @@
 // Path package is a built-in node module we must define in order to use in the application
-var path = require("path");
+const path = require("path");
 
 // Routing
 module.exports = function(app) {

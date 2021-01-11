@@ -1,15 +1,16 @@
 // NPM package dependencies
-var express = require("express");
+const express = require("express");
 
 // Creating an express server
-var app = express();
+const app = express();
 
 // Establishing an initial port
-var PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3033;
 
 // Middleware for data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
 
 // Routing
 require("./routes/htmlRoutes")(app);
