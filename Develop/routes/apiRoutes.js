@@ -1,5 +1,6 @@
 // Dependencies
 const fs = require("fs");
+const crypto = require("crypto");
 
 // Routing
 module.exports = function(app) {
@@ -19,11 +20,11 @@ module.exports = function(app) {
     // For creating new notes and writing to db.json
     app.post("/api/notes", (req, res) => {
 
-        // parsing middleware allows us to use req.body
+        // Parsing middleware allows us to use req.body
         let newNote = req.body;
 
-        // setting a route for deleting notes later
-        newNote.routeName = newNote.noteID;
+        // Setting a random id for deleting notes later
+        newNote.id = crypto.randomBytes(16).toString('hex');
 
         console.log(newNote);
         notes.push(newNote);
@@ -44,7 +45,7 @@ module.exports = function(app) {
 
         // Check db.json to find the chosen note
         for (var i = 0; i < notes.length; i++) {
-            if (chosen === notes[i].routeName) {
+            if (chosen === notes[i].id) {
                 notes.splice(i, 1);
             };
         };
