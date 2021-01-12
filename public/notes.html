@@ -17,8 +17,7 @@
     <a class="navbar-brand" href="/">Note Taker
     </a>
     <div class="icons">
-      <i class="fas fa-save text-light save-note"></i>
-      <i class="fas fa-pen text-light new-note"></i>
+      <i class="fas fa-pen text-light new-note">New Note</i>
     </div>
   </nav>
   <div class="container-fluid">
@@ -30,15 +29,15 @@
         </div>
       </div>
       <div class="col-8">
-        <div class="card">
+        <div class="card" style="height: 500px;">
           <div class="card-body">
             <h4 class="card-title">
-              <input class="note-title w-25" placeholder="Note Title" maxlength="36" type="text">
+              <input class="note-title w-75" placeholder="Note Title" maxlength="64" type="text">
             </h4>
-            <p class="card-text">
-              <textarea class="note-textarea w-75" style="height:90%;" placeholder="Note Text"></textarea>
+            <p class="card-text" style="height:75%;">
+              <textarea class="note-textarea w-100" placeholder="Note Text"></textarea>
             </p>
-            <button type="button" class="fas fa-save btn btn-primary save-note"> Save Note</button>
+            <button type="button" class="mb-2 fas fa-save btn btn-primary save-note"> Save Note</button>
           </div>
         </div>
       </div>
