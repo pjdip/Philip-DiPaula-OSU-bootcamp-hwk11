@@ -53,7 +53,7 @@ module.exports = function(app) {
             let notes = JSON.parse(data);
 
             // Identify note to be deleted
-            var chosen = req.params.note;
+            let chosen = req.params.note;
 
             // Loop through db.json to find the chosen note
             for (var i = 0; i < notes.length; i++) {

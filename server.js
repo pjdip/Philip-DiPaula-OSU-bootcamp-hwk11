@@ -1,6 +1,5 @@
 // NPM package dependencies
 const express = require("express");
-const path = require("path");
 
 // Creating an express server
 const app = express();
