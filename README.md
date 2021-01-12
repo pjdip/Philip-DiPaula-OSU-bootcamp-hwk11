@@ -2,7 +2,8 @@
 
 ## These are the files for the homework assignment associated with section 11 of the OSU Web Development Bootcamp
 
-Here is a link to the [github](https://github.com/pjdip/Philip-DiPaula-OSU-bootcamp-hwk11)
+* Here is a link to the [github](https://github.com/pjdip/Philip-DiPaula-OSU-bootcamp-hwk11)
+* Here is a link to the deployed application on [heroku](https://shielded-journey-57096.herokuapp.com/)
 
 The goal of this assignment was to create an application that can be used to write, save, and delete notes using the [Express package](https://www.npmjs.com/package/express) to construct the backend. Note data is stored in and retrieved from a JSON file using the built-in [fs package](https://nodejs.org/api/fs.html). Users have the ability to write and save notes, as well as view and delte previously saved notes.
 
